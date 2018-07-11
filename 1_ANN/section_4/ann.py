@@ -43,6 +43,25 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
+# Part 2 Now make an ann
+
+# import keres
+import keras
+
+# Library to initialize the neural network
+from keras.models import Sequential
+
+# Library to create the layers on the artificial neural etwork
+from keras.layers import Dense
+
+
+# Initializing the ANN
+classifier = Sequential()
+
+
+
+
+
 
 
 #print(X)
