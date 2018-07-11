@@ -58,26 +58,11 @@ from keras.layers import Dense
 # Initializing the ANN
 classifier = Sequential()
 
+# Add the input layer and the first hidden layer
+# arguments used in dense class: https://keras.io/layers/core/
+
+# output_dim explanation on video
+classifier.add(Dense(output_dim=6,init='uniform',activation='relu',input_dim=11))
 
 
 
-
-
-
-#print(X)
-#print(X_train)
-#print(X_test)
-
-
-"""
-
-# Fitting classifier to the Training set
-# Create your classifier here
-
-# Predicting the Test set results
-y_pred = classifier.predict(X_test)
-
-# Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y_test, y_pred)
-"""
