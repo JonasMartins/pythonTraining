@@ -61,8 +61,11 @@ classifier = Sequential()
 # Add the input layer and the first hidden layer
 # arguments used in dense class: https://keras.io/layers/core/
 
-# output_dim explanation on video
+# adding the input layer and first hidden layer, output_dim explanation on video
 classifier.add(Dense(output_dim=6,init='uniform',activation='relu',input_dim=11))
 
+# adding the second hidden layer
+classifier.add(Dense(output_dim=6,init='uniform',activation='relu'))
 
-
+# add output layer
+classifier.add(Dense(output_dim=1,init='uniform',activation='sigmoid'))
