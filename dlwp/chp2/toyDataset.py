@@ -13,7 +13,7 @@ pylab.ylabel("y")
 pylab.legend(["Without Noise", "With Noise", "Noise"], loc = 2)
 x_train = x[0:80] 
 y_train = y[0:80]
-
+	
 
 # Model with degree 1 
 pylab.figure() 
