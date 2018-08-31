@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 from string import Template
 
 
-# recebe um dataframe como argumento e percorre pela coluna indicada
-# retornando o somatorio dos seus elementos
-def sum(df,col1:str='col1',col2:str='col2',w0:float=0.1,w1:float=0.2,alpha:float=0.01):
-        n = df.shape[0] # row number
-        W1 = w1; W0 = w0; sum_ei = 0; sum_eii = 0
-
+# * Método de regressão linear Univariada
+def linear_regression(df,col1:str='col1',col2:str='col2',w0:float=0.1,w1:float=0.2,alpha:float=0.01,times:int=5):
+    n = df.shape[0] # row number
+    W1 = w1; W0 = w0; sum_ei = 0; sum_eii = 0
+    # Loop through times variable, it had default set as 5 
+    for i in range(times):
         # percorrendo o dataframe
         for index, row in df.iterrows():
             # print(row[col1],row[col2])            
@@ -21,8 +21,15 @@ def sum(df,col1:str='col1',col2:str='col2',w0:float=0.1,w1:float=0.2,alpha:float
             sum_eii += (ei*row[col1])
         
         W0 = w0 + alpha * (sum_ei/n)
-        W1 = w1 + alpha * (sum_eii)
-        return (W0,W1)
+        W1 = w1 + alpha * (sum_eii/n)
+        # print("Run {0}: w0: {1} w1: {2}".format(i,w0,w1)) logs
+        
+        # updating weights    
+        w0 = w0 + (alpha * ei)
+        w1 = w1 + (alpha * (ei*row[col1]))
+
+        # print("W0 {0}: W1: {1}".format(w0,w1)) logs
+    return (W0,W1)
 
 
 def main():
@@ -61,7 +68,7 @@ def main():
     
     
     # atualmente sum retorna uma iteração, os primeiros w0 e w1 
-    print( sum(data,'col1','col2',w0,w1,alpha) )
+    print('Final Weights, w0,w1: {0}'.format(linear_regression(data,'col1','col2',w0,w1,alpha)))
 
     # print(n)
     # print(data.iloc[0])
