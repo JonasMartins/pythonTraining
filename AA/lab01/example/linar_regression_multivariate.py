@@ -12,6 +12,8 @@ my_data = (my_data - my_data.mean())/my_data.std()
 #setting the matrixes
 X = my_data.iloc[:,0:2]
 ones = np.ones([X.shape[0],1])
+
+# * axis: o eixo no qual os arrays vão se juntar
 X = np.concatenate((ones,X),axis=1)
 
 y = my_data.iloc[:,2:3].values #.values converts it from pandas.core.frame.DataFrame to numpy.ndarray
