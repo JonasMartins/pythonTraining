@@ -45,10 +45,7 @@ print('Correlation estimate: %0.5f' %(correlation(dataset['RM'],dataset['target'
 
 print('Correlation from pearsonr estimate: %0.5f' %(pearsonr(dataset['RM'],dataset['target']))[0])
 
-"""
 
-#print(dataset['RM'])
-#print(dataset['target'])
 
 x_range = [dataset['RM'].min(),dataset['RM'].max()]
 y_range = [dataset['target'].min(),dataset['target'].max()]
@@ -57,3 +54,17 @@ meanY = scatter_plot.plot(x_range,[dataset['target'].mean(),dataset['target'].me
 
 meanX = scatter_plot.plot([dataset['RM'].mean(),dataset['RM'].mean()], y_range ,'--',color='red',linewidth=1)
 plt.show() # sempre lembrar de colocar essa linha
+
+"""
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+y = dataset['target']
+X = dataset['RM']
+X = sm.add_constant(X)
+
+# print(X.head())
+# TODO Ver as documentações desse métodos
+linear_regression = sm.OLS(y,X)
+fitted_model = linear_regression.fit()
+print(fitted_model.summary())
