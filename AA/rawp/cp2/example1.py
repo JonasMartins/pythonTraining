@@ -67,4 +67,29 @@ X = sm.add_constant(X)
 # TODO Ver as documentações desse métodos
 linear_regression = sm.OLS(y,X)
 fitted_model = linear_regression.fit()
-print(fitted_model.summary())
+# print(fitted_model.summary())
+
+# * Os pesos das variáveis:
+# print(fitted_model.params) 
+
+# * Aplicando a equção da reta
+fitted_values = fitted_model.predict(X)
+
+betas = np.array(fitted_model.params)
+"""
+x_range = [dataset['RM'].min(),dataset['RM'].max()]
+y_range = [dataset['target'].min(),dataset['target'].max()]
+scatter_plot = dataset.plot(kind='scatter',x='RM',y='target',xlim=x_range,ylim=y_range)
+meanY = scatter_plot.plot(x_range,[dataset['target'].mean(),dataset['target'].mean()],'--',color='red',linewidth=1)
+
+meanX = scatter_plot.plot([dataset['RM'].mean(),dataset['RM'].mean()], y_range ,'--',color='red',linewidth=1)
+
+regression_line = scatter_plot.plot(dataset['RM'], fitted_values, '-', color='orange', linewidth=1)
+
+plt.show() # sempre lembrar de colocar essa linha
+
+"""
+# print(betas)
+# * usando dot do numpy
+# * predictions_by_dot_product = np.dot(X.betas)
+
