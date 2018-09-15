@@ -93,3 +93,22 @@ plt.show() # sempre lembrar de colocar essa linha
 # * usando dot do numpy
 # * predictions_by_dot_product = np.dot(X.betas)
 
+
+# * Gradiente descendente:
+
+observations = len(dataset)
+
+# X deve ser sempre uma matriz
+X = dataset['RM'].values.reshape((observations,1))
+
+# Add bias
+X = np.column_stack((X,np.ones(observations)))
+
+# y pode ser um vetor
+y = dataset['target'].values
+
+
+
+
+
+
