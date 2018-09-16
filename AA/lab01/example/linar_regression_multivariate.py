@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# source: https://medium.com/we-are-orb/multivariate-linear-regression-in-python-without-scikit-learn-7091b1d45905
+
 my_data = pd.read_csv('home.txt',names=["size","bedroom","price"])
 
 #we need to normalize the features using mean normalization
