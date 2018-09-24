@@ -11,6 +11,7 @@ def gradient_descent(alpha, x, y, ep=0.0001, max_iter=1000):
     iter = 0
     m = x.shape[0] # number of samples
     # initial theta
+    # np.random.random() Return random floats in the half-open interval [0.0, 1.0).
     t0 = np.random.random(x.shape[1])
     t1 = np.random.random(x.shape[1])
 
@@ -53,6 +54,9 @@ def gradient_descent(alpha, x, y, ep=0.0001, max_iter=1000):
 
 if __name__ == '__main__':
 
+
+    """
+
     # data é um array numpy.
     data = np.loadtxt('ex1data1.txt',delimiter=',')
     # x = da linha 0 até a ultima, pegando a coluna 0, logo os valores de x
@@ -88,3 +92,15 @@ if __name__ == '__main__':
     plt.ylabel('column 2')
     plt.xlabel('column 1')
     plt.show()
+
+
+    """
+    # x.__class__.__name__ get class
+    # data é um array numpy.
+    data = np.loadtxt('ex1data1.txt',delimiter=',')
+    # x = da linha 0 até a ultima, pegando a coluna 0, logo os valores de x
+    x = data[:-1,[0]]
+
+    # x.shape[0] = retorna a quantidade de linhas, 1, retorna as colunas.
+    print(np.random.random(3))
+    print(np.random.random(x.shape[1]))
