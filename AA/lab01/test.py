@@ -15,12 +15,22 @@ my_data = (my_data - my_data.mean())/my_data.std()
 # ?.values converts it from pandas.core.frame.DataFrame to numpy.ndarray
 X = my_data.iloc[:,0:2].values
 
+# * Fazendo uma matriz de n linhas, n é o mesmo número de linhas
+# * da matriz X, isso é informado via X.shape[0], e uma coluna
+# * e preenche de ums
 ones = np.ones([X.shape[0],1])
+
+# * concatena a matriz X com a primeira coluna apenas com ums
+# * assim como no slide de regressão multicariada
 X = np.concatenate((ones,X),axis=1)
 
+
+# TODO Aqui y se refere aos valors conhecidos que queremos prever,
+# TODO pegamos da linha 0 até a ultima e entre as colunas 2 e 3
 y = my_data.iloc[:,2:3].values #.values converts it from pandas.core.frame.DataFrame to
 
 # * Cria uma matriz de uma linha e 3 colunas com apenas zeros
+# * Esse é o vetor de pesos, 
 theta = np.zeros([1,3])
 # print( ('theta0 = %s theta1 = %s') %(theta0, theta1) )
 
