@@ -1,0 +1,15 @@
+
+Source playlist:
+
+https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN
+
+Anotações matéria ap1 aprendizagem automática:
+
+1 Regressão logística:
+
+Usa uma função logistica, além do modelo línear, regressão logistica é um método de classificação, ou seja serve para classificar dados entre true ou false.
+Ao invés de uma linha reta cortando os dados e os separando, uma regressão logistica usa uma curva em forma de S pelos dados, a curva vai de 0 a 1. Um exemplo
+de regressão é:  Obesidade prevista baseada pelo peso, sendo multivariada teríamos, obesidade prevista pelo peso, genotipo e idade. As variáveis usadas para prever
+a obesidade de uma pessoa, podem ser tanto contínua (peso e idade) ou discreta (genotipo e signo astrológico)
+
+Na regressão línear a linha traçada nos dados é determinada usando o método dos mínimos quadrados, o que não é usado pela regressão logistica 
