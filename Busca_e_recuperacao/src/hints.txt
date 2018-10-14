@@ -1,0 +1,9 @@
+Ensemble design: In this design, results from oﬀ-the-shelf algorithms are combined into a single and 
+more robust output. For example, one might combine the rating outputs from a content-based and a 
+collaborative recommender into a single output. A signiﬁcant variation exists in terms of the speciﬁc 
+methodologies used for the combination process. The basic principle at work is not very diﬀerent from 
+the design of ensemble methods in many data mining applications such as clustering, classiﬁcation, and 
+outlier analysis.
+
+Example to be implemented:
+https://github.com/ayush-jain/hotel_recommender_system
