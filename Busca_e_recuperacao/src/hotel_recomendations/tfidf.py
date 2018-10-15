@@ -210,7 +210,7 @@ def get_results(city,no):
 		cs_featurenames.append(feature_names[x])
 
 	print (cs_featurenames)
-	print "\n"
+	print("\n")
 
 	nmf1 = decomposition.NMF(n_components=3, init='random',random_state=0).fit(X_train)
 	topic_list=[]
@@ -221,7 +221,7 @@ def get_results(city,no):
 		topic_list.append(z)
 		print("Topic #%d:---------------------------------------" % topic_idx)
 		for y in z:
-			print cs_featurenames[y]
+			print( cs_featurenames[y])
     #print (topic)
 	#print "Hello----"    
 	#print topic_list
@@ -260,10 +260,10 @@ def get_results(city,no):
 	res=[]	
 	temp1=numpy.array(temp).argsort()[::-1]
 	#print temp1
-	print "Top %d recommendations are as follows[in the FORMAT Index,(Hotel name,Location),Score]:\n" %no
+	print("Top %d recommendations are as follows[in the FORMAT Index,(Hotel name,Location),Score]:\n" %no)
 
 	for g in temp1[:no]:
-		print g,dic[g],temp[g]
+		print(g,dic[g],temp[g])
 		res.append(dic[g])
 
 	return res	

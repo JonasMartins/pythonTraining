@@ -1,5 +1,5 @@
-from Tkinter import *
-import tkMessageBox
+from tkinter import *
+from tkinter import messagebox
 import tfidf
 import collab
 top = Tk()
